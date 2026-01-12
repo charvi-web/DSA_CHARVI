@@ -27,15 +27,16 @@ public:
     //    return ans;
 vector<int>ans;
     stack<TreeNode*>st;
+        if (root==nullptr) return ans;
+
     st.push(root);
-    if (root==nullptr) return ans;
     while (!st.empty())
     {
         TreeNode* node = st.top();
         st.pop();
         ans.push_back(node->val);
         if (node->right) {st.push(node->right);}
-        if (node->left) {st.push(node->left);
+        if (node->left) {st.push(node->left);}
     }
 return ans;
     }

@@ -10,17 +10,7 @@ using namespace std;
 };
 class Solution {
 public:
-    vector<vector<int>> levelOrder(TreeNode* root) {
-    //     vector<int>ans;
-    //     if (root == nullptr) {
-    //         return ans;
-    //     }
-    //     ans.push_back(root->val);
-    //     vector<int>lefti = preorderTraversal(root->left);
-    //     vector<int>righti = preorderTraversal(root->right);
-    //     ans.insert(ans.end(),lefti.begin(),lefti.end());
-    //     ans.insert(ans.end(),righti.begin(),righti.end());
-    //    return ans;
+vector<vector<int>> levelOrder(TreeNode* root) {
 vector<vector<int>>ans;
     queue<TreeNode*>q;
     if (root==nullptr) {return ans;}

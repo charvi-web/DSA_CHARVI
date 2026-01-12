@@ -26,20 +26,17 @@ public:
     //     ans.insert(ans.end(),righti.begin(),righti.end());
     //    return ans;
 vector<int>ans;
-    stack<TreeNode*>st;\
-    if (root==nullptr) {return ans;}
+    stack<TreeNode*>st;
     st.push(root);
-    while(!st.empty())
+    if (root==nullptr) return ans;
+    while (!st.empty())
     {
         TreeNode* node = st.top();
         st.pop();
         ans.push_back(node->val);
         if (node->right) {st.push(node->right);}
-        if (node->left) {st.push(node->left);}
-
+        if (node->left) {st.push(node->left);
     }
-    return ans;
-
-
+return ans;
     }
 };

@@ -18,12 +18,11 @@ class Solution{
             st.push({root,1});
             while (!st.empty())
             {
-                for (auto it : st.top())
-                {
-                    st.pop();
+                auto it = st.top();
+                st.pop();
                 if (it.second==1)
                 {
-                    pre.push_back(it.first->val);
+                    pre.push_back(it.first->data);
                     it.second++;
                     st.push(it);
                     if (it.first->left)
@@ -33,7 +32,7 @@ class Solution{
                 }
                 else if (it.second==2)
                 {
-                    in.push_back(it.first->val);
+                    in.push_back(it.first->data);
                     it.second++;
                     st.push(it);
                     if (it.first->right)
@@ -41,8 +40,8 @@ class Solution{
                         st.push({it.first->right,1});
                     }
                 }
-                else {post.push_back(it.first->val);}
-                }
+                else {post.push_back(it.first->data);}
+                
             }
             return {pre,in,post};
 		}

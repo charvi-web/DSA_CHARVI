@@ -35,6 +35,20 @@ int lengthLL (Node* head)
     }
     return cnt;
 }
+int ifPresent(Node* head,int k)
+{
+    Node* temp = head;
+    while(temp)
+    {
+        
+        if (temp->data==k)
+        {
+            return 1;
+        }
+        temp=temp->next;
+    }
+    return 0;
+}
 int main()
 {
     vector<int>A={1,2,3,4,5};
@@ -53,4 +67,5 @@ int main()
     }
     int l = lengthLL(head); 
     cout<<endl<<"Length of linked list is "<<l<<endl;
+    cout<<"Is 3 present in linked list "<<ifPresent(head,32)<<endl;
 }

@@ -53,6 +53,33 @@ Node* deleteTail(Node* head)
     temp->next=nullptr;
     return head;
 }
+Node* deleteKelement(Node* head,int k)
+{
+    if (head==nullptr) return nullptr;
+    int cnt =0;
+    Node* temp = head;
+    Node* prev = nullptr;
+    if (k==1) 
+    {
+        Node* t = head;
+        head=head->next;
+        delete t;
+        return head;
+    }
+    while(temp)
+    {
+        cnt++;
+        if (cnt==k)
+        {
+            prev->next=prev->next->next;
+            delete temp;
+            break;
+        }
+        prev=temp;
+        temp=temp->next;
+    }
+    return head;
+}
 
 int main()
 {
@@ -70,5 +97,9 @@ int main()
     deleteTail(head);
     printLL(head);
 
+    cout<<endl;
+    cout<<"After deletion of K element :  "<<endl;
+    deleteKelement(head,2);
+    printLL(head);
     
 }

@@ -31,7 +31,8 @@ public:
    
     }
     
-    int pop() {
+    int pop() 
+    {
         if (start==nullptr) return -1;
         Node* temp = start;
         int v = temp->data;

@@ -13,7 +13,7 @@ public:
 class Solution {
 public:
     ListNode* reverseDLL(ListNode* head) {
-        // Your code goes here
+        // similar to swapping of two numbers using third variable
         if (head==nullptr || head->next==nullptr) return head;
         ListNode* temp = head;
         ListNode* last = nullptr;

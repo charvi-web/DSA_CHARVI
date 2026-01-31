@@ -12,7 +12,7 @@ public:
     vector<vector<int>> verticalTraversal(TreeNode* root) {
         queue<pair<TreeNode*, pair<int, int>>> q;
         q.push({root, {0, 0}});
-        map<int, map<int, multiset<int>>> ds;
+        map<int, map<int, multiset<int>>> ds;  //vertical level multiple
 
         while (!q.empty()) {
             auto it = q.front();

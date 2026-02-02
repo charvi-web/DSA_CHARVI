@@ -58,10 +58,8 @@ public:
         }
       
     if (fast == nullptr) {
-    ListNode* del = head;
-    head = head->next;
-    delete del;
-    return head;
+    
+    return head->next;
 }
         
 

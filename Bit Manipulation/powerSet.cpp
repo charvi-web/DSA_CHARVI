@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-Solution {
+class Solution {
 public:
 void f(int ind, vector<int>& nums, int n,vector<int>&ds,vector<vector<int>>&ans)
 {

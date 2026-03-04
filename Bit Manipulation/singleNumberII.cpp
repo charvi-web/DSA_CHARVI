@@ -28,5 +28,18 @@ public:
             if (nums[i]!=nums[i-1]) return nums[i-1];
         }
         return nums[nums.size()-1];
+
+
+
+        //buckets
+        // int ones=0,twos=0;
+        //  int n = nums.size();
+        // for (int i=0;i<n;i++)
+        // {
+        //     ones = ones^nums[i]&~twos;
+        //     twos = twos^nums[i]&~ones;
+        // }
+        // return ones;
+
     }
 };

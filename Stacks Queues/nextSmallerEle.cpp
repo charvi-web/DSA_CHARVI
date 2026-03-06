@@ -2,12 +2,12 @@
 using namespace std;
 class Solution {
 public:
-    vector<int> previousSmallerElements(vector<int>& arr) {
-        // left side mei chhote , increasing monotonic stack
+    vector<int> nextSmallerElements(vector<int>& arr) {
+        // Your code goes here
         stack<int>st;
         int n = arr.size();
         vector<int>res(n,-1);
-        for (int i=0;i<n;i++)
+        for (int i=n-1;i>=0;i--)
         {
             while(!st.empty() && st.top()>=arr[i])
             {

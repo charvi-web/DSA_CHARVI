@@ -4,6 +4,11 @@ class Heap{
     public:
     int A[100];
     int size;
+    Heap()
+    {
+        A[0]=-1;
+        size=0;
+    }
     void insert(int val)
     {
         size=size+1;
@@ -19,5 +24,23 @@ class Heap{
             }
             else {return;}
         }
+       
     }
+     void print()
+        {
+            for (int i=1;i<=size;i++)
+            {
+                cout<<A[i]<<" ";
+            }
+        }
 };
+int main()
+{
+    Heap h;
+    h.insert(50);
+    h.insert(55);
+    h.insert(53);
+    h.insert(52);
+    h.insert(54);
+    h.print();
+}

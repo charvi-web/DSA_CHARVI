@@ -33,6 +33,67 @@ class Heap{
                 cout<<A[i]<<" ";
             }
         }
+
+    void deleteFromHeap()
+    {
+        if (size==0)
+        {
+            cout<<"Nothing to delete"<<endl;
+            return;
+        }
+
+        A[1]=A[size];
+        size--;
+        int i=1;
+        while(i<size)
+        {
+            int leftIndex = 2*i;
+            int rightIndex = 2*i+1;
+            if (leftIndex<size && A[i]<A[leftIndex])
+            {
+                swap(A[i],A[leftIndex]);
+                i=leftIndex;
+            }
+            else if (rightIndex<size && A[i]<A[rightIndex])
+            {
+                swap(A[i],A[rightIndex]);
+                i=rightIndex;
+            }
+            else {return;}
+        }
+
+    }
+
+    void heapify(int A[],int n,int i)
+    {
+        int largest = i;
+        int leftIndex = 2*i;
+        int rightIndex = 2*i+1;
+        if (leftIndex<n && A[largest]<A[leftIndex])
+        {
+            largest=leftIndex;
+        }
+        if (rightIndex<n && A[largest]<A[rightIndex])
+        {
+            largest=rightIndex;
+        }
+        if (largest!=i)
+        {
+            swap(A[i],A[largest]);
+            heapify(A,n,largest);
+    }
+
+
+    void heapSort(int A[],int n)
+    {
+        int size = n;
+        while (size>1)
+        {
+            swap(A[1],A[size]);
+            size--;
+            heapify(A,n,1);
+        }
+    }
 };
 int main()
 {

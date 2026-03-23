@@ -26,7 +26,7 @@ class Solution {
       if (tree==NULL) return true;
       if (index>=c) return false;
       return isCBT(tree->left,c,index*2+1) && 
-      isCBT(tree->right,c,2*index+2);
+      isCBT(tree->right,c,2*index+2); 
   }
   bool isMaxOrder(Node* tree)
   {

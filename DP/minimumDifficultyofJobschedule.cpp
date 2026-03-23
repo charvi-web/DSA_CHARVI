@@ -2,9 +2,9 @@
 using namespace std;
 class Solution {
 public:
+int T[301][11];
 int solve(vector<int>& A,int n,int idx,int d)
 {
-    vector<vector<int>>T(301,vector<int>(11,-1));
     
 
     if (d==1)
@@ -31,7 +31,7 @@ if (T[idx][d]!=-1) return T[idx][d];
         int n = jobDifficulty.size();
         
         if (n<d) return -1;
-
+        memset(T,-1,sizeof(T));
         return solve(jobDifficulty,n,0,d);
         
     }

@@ -2,6 +2,21 @@
 using namespace std;
 class Solution {
 public:
+void func(int ind,vector<vector<int>>&ans,vector<int>&nums)
+{
+    if (ind==nums.size())
+    {
+        ans.push_back(nums);
+        return;
+    }
+
+    for(int i=ind;i<nums.size();i++)
+    {
+        swap(nums[i],nums[ind]);
+        f(ind+1,ans,nums);
+        swap(nums[i],nums[ind]);
+    }
+}
 void f(vector<vector<int>>&ans,vector<int>&A,vector<int>&nums,vector<int>&freq)
 {
     if (nums.size()== A.size())
@@ -29,5 +44,10 @@ void f(vector<vector<int>>&ans,vector<int>&A,vector<int>&nums,vector<int>&freq)
         for (int i=0;i<n;i++) freq[i]=0;
         f(ans,A,nums,freq);
         return ans;
+
+        // vector<vector<int>>ans;
+        // func(0,ans,nums);
+        // return ans;
+
     }
 };

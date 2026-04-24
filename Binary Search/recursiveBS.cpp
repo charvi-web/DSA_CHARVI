@@ -2,9 +2,7 @@
 using namespace std;
 int recrBS(vector<int>&A, int k,int start,int end)
 {
-
     int mid = start+(end-start)/2;
-
     if (start>end) return -1;
     if (A[mid]==k) return mid;
     else if (A[mid]>k) {return recrBS(A,k,start,mid-1);}

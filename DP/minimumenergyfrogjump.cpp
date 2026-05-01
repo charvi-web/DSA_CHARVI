@@ -7,7 +7,7 @@ public:
         // dp[0]=0;
         int prev2=0;
         int prev1=0;
-        for (int i=1;i<n;i++)
+        for (int i=1;i<n;i++)  //last stair is n-1
         {
             // int left = dp[i-1]+ abs(heights[i]-heights[i-1]);
             // int right= INT_MAX;
